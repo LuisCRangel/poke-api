@@ -7,13 +7,16 @@ import './style/pokemonCard.css'
 const PokemonCard = ({url}) => {
 
   const [pokemon, setPokemon] = useState()
+  const [isLoading, setIsLoading] = useState(true)
 
   const navigate = useNavigate()
 
   useEffect(() => {
+    setIsLoading(true)
     axios.get(url)
       .then(res => setPokemon(res.data))
       .catch(err => console.log(err))
+      .finally(() => setIsLoading(false))
   }, [])
 
   const handleClick = () => navigate(`/pokedex/${pokemon.name}`)
@@ -21,7 +24,14 @@ const PokemonCard = ({url}) => {
   return (
     <article onClick={handleClick} className={`card border-${pokemon?.types[0].type.name}`}>
       <header className={`card__header bg-${pokemon?.types[0].type.name}`}>
-        <img className='card__avatar' src={pokemon?.sprites.other["official-artwork"]["front_default"]} alt="" />
+        {
+          isLoading
+            ? 
+            <div className='loader__container'>
+            <div className="loader"></div>
+            </div>
+            :<img className='card__avatar' src={pokemon?.sprites.other["official-artwork"]["front_default"]} alt="" />
+        }
       </header>
       <section className='card__body'>
         <h3 className={`card__name name-${pokemon?.types[0].type.name}`}>{pokemon?.name}</h3>

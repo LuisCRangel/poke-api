@@ -1,10 +1,15 @@
+*{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body {
+  box-sizing: border-box;
+}
 .card__details {
   width: 80%;
   border-radius: 15px;
   overflow: hidden;
   background-color: white;
   box-shadow: 0 1px 7px #0003;
-  border: 3px solid #3f4345;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -19,7 +24,7 @@
     #cae099 99.08%
   );
   position: relative;
-  height: 300px;
+  height: 500px;
   border: transparent;
   margin-bottom: 120px;
 }
@@ -158,21 +163,15 @@
 /*--------------------------*/
 .number_id {
   text-align: center;
-  width: 30px;
+  padding: 2px;
+  width: fit-content;
   border: 1px solid #d3d3d3;
   margin-left: auto;
   margin-right: auto;
 }
-.card__nam-detail {
-  text-align: center;
-  text-transform: capitalize;
-  font-weight: 500;
-  font-size: 23px;
-  margin-bottom: 5px;
-}
 .card__detail-avatar {
   position: absolute;
-  width: 400px;
+  width: 600px;
   left: 50%;
   top: 15px;
   transform: translateX(-50%);
@@ -184,26 +183,32 @@
 h1 {
   padding-bottom: 20px;
 }
+.card__name-detail {
+  padding: 30px;
+}
 .detail-pokemon {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 20px;
-  font-size: 10px;
+  font-size: 20px;
 }
 .detail-pokemon__info {
-  font-size: 12px;
+  font-size: 20px;
 }
-.card__detail-container {    
+.card__detail-container {
   display: flex;
+  width: 75vw;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 10px;  
+  gap: 10px;
   margin-top: 20px;
   margin-bottom: 50px;
 }
-.detail__info-skill{
+.detail__info-skill,
+.detail__info-type {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -211,49 +216,295 @@ h1 {
   gap: 10px;
   text-align: center;
   font-size: 20px;
-  margin-top: 20px;
-  /* margin-bottom: 50px; */
+  margin-top: 20px; 
 }
-.detail__info-type{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  text-align: center;
-  font-size: 20px;
-  margin-top: 20px;
+.detail__info-type {
+  flex-direction: row;
 }
 
-.card__detail-type {
-  width: 120px;
-  padding: 5px;
-  background: #303131;
-    color: white;
-    border: 1px solid #654008;  
-    text-align: center;
-    border-radius: 10px;
-    justify-content: center;
-    align-items: center;
-    text-transform: capitalize;
-    font-size: 14px;
-    
-}
-.card__detail-skills{
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 14px;
-  width: 120px;
-  padding: 5px;
-  background: #303131;
-  color: white;
-  border: 1px solid #654008;  
+.card__detail-type,
+.card__detail-skills {
+  width: 220px;
+  height: 50px;
+  padding: 9px;  
   text-align: center;
-  border-radius: 10px;
   justify-content: center;
   align-items: center;
   text-transform: capitalize;
+  font-size: 25px;
+  color: #fff;
+  border-radius: 5px;
+}
+.card__detail-skills {
+  background: #858484;
+ 
 
+}
+.cl-grass {
+  background: #7ec6c5;
+}
+.cl-normal {
+  background: linear-gradient(
+    181.51deg,
+    #735259 -6.44%,
+    #bc6b7c 121.95%,
+    #7c3f4c 186.11%
+  );
+}
+
+.cl-fighting {
+  background: linear-gradient(
+    176.83deg,
+    #96402a -8.78%,
+    #f1613c 169.09%,
+    #cb735d 242.33%
+  );
+}
+.cl-flying {
+  background: rgba(237, 218, 193, 1);
+}
+.cl-poison {
+  background: linear-gradient(
+    177.03deg,
+    #5b3184 -11.97%,
+    #a564e3 71.28%,
+    #ce9bff 135.64%
+  );
+}
+.cl-ground {
+  background: linear-gradient(
+    179.75deg,
+    #654008 -19.96%,
+    #895c1a 43.67%,
+    #d69638 138.4%
+  );
+}
+.cl-rock {
+  background: linear-gradient(
+    177.03deg,
+    #7e7e7e -11.97%,
+    #8d8d94 57.49%,
+    #d3d3d3 135.64%
+  );
+}
+.cl-bug {
+  background: linear-gradient(
+    177.56deg,
+    #62db60 -58.92%,
+    #3bb039 16.57%,
+    #aaffa8 209.53%
+  );
+}
+.cl-ghost {
+  background: linear-gradient(
+    177.03deg,
+    #323569 -11.97%,
+    #454aa8 57.49%,
+    #787dda 135.64%
+  );
+}
+.cl-steel {
+  background: linear-gradient(
+    179.75deg,
+    #5e736c -19.96%,
+    #728881 43.67%,
+    #a8a8a8 138.4%
+  );
+}
+.cl-fire {
+  background: linear-gradient(
+    176.37deg,
+    #f96d6f -32.26%,
+    #e35825 22.55%,
+    #e8ae1b 125.72%
+  );
+}
+.cl-water {
+  background: linear-gradient(
+    179.57deg,
+    #133258 -70.14%,
+    #1479fb 56.16%,
+    #82b2f1 214.85%
+  );
+}
+.cl-electric {
+  background: linear-gradient(
+    0deg,
+    rgba(245, 249, 205, 1) 0%,
+    rgba(249, 255, 0, 1) 100%
+  );
+}
+.cl-psychic {
+  background: linear-gradient(
+    0deg,
+    rgba(241, 213, 249, 1) 1%,
+    rgba(227, 137, 241, 1) 66%
+  );
+}
+.cl-ice {
+  background: linear-gradient(
+    177.03deg,
+    #6fbedf -11.97%,
+    #64cbf5 47.77%,
+    #bdebfe 136.72%
+  );
+}
+.cl-dragon {
+  background: linear-gradient(
+    179.75deg,
+    #478a93 -19.96%,
+    #56a4ae 43.67%,
+    #a2bec1 138.4%
+  );
+}
+.cl-dark {
+  background: linear-gradient(
+    177.03deg,
+    #030706 -11.97%,
+    #0d1211 57.49%,
+    #5a5e5d 135.64%
+  );
+}
+.cl-fairy {
+  background: linear-gradient(
+    179.75deg,
+    #971b45 -19.96%,
+    #c23867 43.67%,
+    #cd7d98 138.4%
+  );
+}
+.cl2-grass {
+  background-color: #3bb039;
+}
+.cl2-normal {
+  background: linear-gradient(
+    181.51deg,
+    #735259 -6.44%,
+    #bc6b7c 121.95%,
+    #7c3f4c 186.11%
+  );
+}
+
+.cl2-fighting {
+  background: linear-gradient(
+    176.83deg,
+    #96402a -8.78%,
+    #f1613c 169.09%,
+    #cb735d 242.33%
+  );
+}
+.cl2-flying {
+  background: rgba(237, 218, 193, 1);
+}
+.cl2-poison {
+  background: linear-gradient(
+    177.03deg,
+    #5b3184 -11.97%,
+    #a564e3 71.28%,
+    #ce9bff 135.64%
+  );
+}
+.cl2-ground {
+  background: linear-gradient(
+    179.75deg,
+    #654008 -19.96%,
+    #895c1a 43.67%,
+    #d69638 138.4%
+  );
+}
+.cl2-rock {
+  background: linear-gradient(
+    177.03deg,
+    #7e7e7e -11.97%,
+    #8d8d94 57.49%,
+    #d3d3d3 135.64%
+  );
+}
+.cl2-bug {
+  background: linear-gradient(
+    177.56deg,
+    #62db60 -58.92%,
+    #3bb039 16.57%,
+    #aaffa8 209.53%
+  );
+}
+.cl2-ghost {
+  background: linear-gradient(
+    177.03deg,
+    #323569 -11.97%,
+    #454aa8 57.49%,
+    #787dda 135.64%
+  );
+}
+.cl2-steel {
+  background: linear-gradient(
+    179.75deg,
+    #5e736c -19.96%,
+    #728881 43.67%,
+    #a8a8a8 138.4%
+  );
+}
+.cl2-fire {
+  background: linear-gradient(
+    176.37deg,
+    #f96d6f -32.26%,
+    #e35825 22.55%,
+    #e8ae1b 125.72%
+  );
+}
+.cl2-water {
+  background: linear-gradient(
+    179.57deg,
+    #133258 -70.14%,
+    #1479fb 56.16%,
+    #82b2f1 214.85%
+  );
+}
+.cl2-electric {
+  background: linear-gradient(
+    0deg,
+    rgba(245, 249, 205, 1) 0%,
+    rgba(249, 255, 0, 1) 100%
+  );
+}
+.cl2-psychic {
+  background: linear-gradient(
+    0deg,
+    rgba(241, 213, 249, 1) 1%,
+    rgba(227, 137, 241, 1) 66%
+  );
+}
+.cl2-ice {
+  background: linear-gradient(
+    177.03deg,
+    #6fbedf -11.97%,
+    #64cbf5 47.77%,
+    #bdebfe 136.72%
+  );
+}
+.cl2-dragon {
+  background: linear-gradient(
+    179.75deg,
+    #478a93 -19.96%,
+    #56a4ae 43.67%,
+    #a2bec1 138.4%
+  );
+}
+.cl2-dark {
+  background: linear-gradient(
+    177.03deg,
+    #030706 -11.97%,
+    #0d1211 57.49%,
+    #5a5e5d 135.64%
+  );
+}
+.cl2-fairy {
+  background: linear-gradient(
+    179.75deg,
+    #971b45 -19.96%,
+    #c23867 43.67%,
+    #cd7d98 138.4%
+  );
 }
 
 .card__move {
@@ -261,8 +512,7 @@ h1 {
   border-radius: 15px;
   overflow: hidden;
   background-color: white;
-  box-shadow: 0 1px 7px #0003;
-  border: 3px solid #3f4345;
+  box-shadow: 0 1px 7px #0003; 
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -271,32 +521,83 @@ h1 {
   margin-bottom: 40px;
   font-size: 20px;
 }
-.list__move {
+.moves {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  justify-content: center;
+  gap: 12px;
+  margin: 10px;
+}
+.list__move {
+  background-color: #e5e5e5;
   border-radius: 8px;
+  max-width: max-content;
+  padding: 9px;
+  margin: 2px;
+  color: #302f2f;
+  border-radius: 10px;
 }
-.type__title{
-  display: flex;
-  flex-direction: column;
+.card__name{
+  font-size: 30px;
 }
-h3{
+.card__name-move {
+  margin: 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+h3 {
   margin-top: 20px;
 }
-@media(max-width:768px){
-  .card__details{
-    width: 80%;    
+@media (max-width: 768px) {
+  .card__details {
+    width: 95%;
   }
-  .card__header-detail{
+  .detail-pokemon{
+    font-size: 14px;
+  }
+  .detail-pokemon__info{
+    font-size: 15px;
+  }
+  .card__detail-container {
+    flex-direction: column;
+    gap: 1px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .detail__info-type {
+    flex-direction: column;
+  }
+  .detail__info-skill {
+    flex-direction: column;
+  }
+  .card__header-detail {
     height: 180px;
   }
-  .card__detail-avatar{
-    width: 270px;
-    left: 50%;
+  .card__detail-avatar {
+    width: 280px;
+    left: 50%;    
   }
-  .card__move{
-    width: 80%;
+  .card__detail-skills{
+    width: 150px;
+    height: 30px;
+    padding: 5px;
+    font-size: 15px;
+    border-radius: 2px;
+  }
+  .card__detail-type{
+    width: 150px;
+    height: 30px;
+    padding: 5px;
+    font-size: 15px;
+    border-radius: 2px;
+  }
+  .card__name-detail {
+    padding: 3px;
+  }
+  .card__move {
+    width: 95%;
+  }  
+  .list__move{   
+    font-size: 15px;
+    padding: 4px;
   }
 }
